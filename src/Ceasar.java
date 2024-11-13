@@ -1,17 +1,12 @@
 package src;
 
-import java.Verwaltung;
-
-
-
-
 public class Ceasar {
 
     private String gt;
     private String kt;
     private int s;
 
-    public class Ceasar() {
+    public Ceasar() {
     }
 
     public void verschluesseln() {
@@ -33,15 +28,15 @@ public class Ceasar {
 
     }
    public String getKt() {
-
+   return kt;
    }
    public void setKt(String pGt){
 
    }
    public int getS(){
-
+return s;
    }
-   public void set(int pSchluessel){
+   public void setS(int pSchluessel){
 
    }
 }
