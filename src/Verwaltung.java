@@ -1,12 +1,13 @@
+package src;
+
 import java.util.Scanner;
 
 public class Verwaltung {
     private Scanner scanner;
-    private Tester test;
+    private Ceasar ceasar;
 
     public static void main(String[] args) {
         new Verwaltung();
-
     }
     public Verwaltung() {
         scanner = new Scanner(System.in);
@@ -32,12 +33,9 @@ public class Verwaltung {
                 System.out.prinlt(this.ceasar.getGt());
 
             } else if (option == 2) {
-                // this.sendMessage();
-                System.out.println("Gib die Zeichenkette für den Palindromtest an:");
-                String zeichenkette = scanner.nextLine();
-                this.test.setEingabe(zeichenkette);
-                this.test.palindromTest();
-                System.out.println("Ist dein Wort ein Palindrom? Die Antwort lautet: "+this.test.isIstPalindrom());
+                this.ceasar.entschluesseln();
+                System.out.println(this.ceasar.getKt());
+
             }
             else if (option == 0) {
                 break;
