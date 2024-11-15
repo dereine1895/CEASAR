@@ -8,8 +8,13 @@ public class Ceasar {
 
     public Ceasar() {
     }
+    String gt="";
 
     public void verschluesseln() {
+     for(int i =0; i < kt.length(); i++){
+         int h = h + this.getAscii(kt.charAt(i));
+         gt= this.getChar(
+     }
     }
     public void entschluesseln() {
     }
@@ -22,7 +27,7 @@ public class Ceasar {
       }
    public String getGt()
     {
-        return null;
+        return gt;
     }
    public void setGt(String pGt){
 
