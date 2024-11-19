@@ -5,18 +5,21 @@ public class Ceasar {
     private int S;
 
     public Ceasar() {
+
         gt = "";
         kt = "";
         S = 0;
     }
 
     public void verschluesseln() {
+        gt ="";
      for(int i =0; i < kt.length(); i++){
          int h = this.getAscii(kt.charAt(i));
          gt= gt + this.getChar(h + S);
      }
     }
     public void entschluesseln() {
+        kt="";
         for(int i =0; i < gt.length(); i++){
             int h = this.getAscii(gt.charAt(i));
             kt= kt + this.getChar(h - S);

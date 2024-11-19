@@ -31,8 +31,20 @@ public class Verwaltung{
                 System.out.println(this.ceasar.getgt());
 
             } else if (option == 2) {
-                this.ceasar.entschluesseln();
+                System.out.println("Gib das zu entschlüsselnde Wort an:");
+                String zeichenkette = scanner.nextLine();
+                System.out.println("Gib den Schlüssel an:");
+                String schluesselString = scanner.nextLine();
+                int schluessel = Integer.parseInt(schluesselString);
+                ceasar= new Ceasar();
+                this.ceasar.setgt(zeichenkette);
+                this.ceasar.setS(schluessel);
+                System.out.println("=======Geheimtext=======");
                 System.out.println(this.ceasar.getkt());
+                this.ceasar.entschluesseln();
+                System.out.println("=======Klartext=======");
+                System.out.println(this.ceasar.getgt());
+
 
             }
             else if (option == 0) {
