@@ -4,19 +4,25 @@ public class Ceasar {
 
     private String gt;
     private String kt;
-    private int s;
+    private int S;
 
     public Ceasar() {
-    }
-    String gt="";
+
+    gt ="";
+    kt ="";
+    S = 0;
+
 
     public void verschluesseln() {
      for(int i =0; i < kt.length(); i++){
-         int h = h + this.getAscii(kt.charAt(i));
-         gt= this.getChar(
+         int h = this.getAscii(kt.charAt(i));
+         gt= gt + this.getChar(h + S);
      }
     }
     public void entschluesseln() {
+        for(int i =0; i < gt.length(); i++){
+            int h = this.getAscii(gt.charAt(i));
+            kt= kt + this.getChar(h - S);
     }
 
    private char getChar(int pWert) {
@@ -25,21 +31,21 @@ public class Ceasar {
    private int getAscii(char pWert) {
         return (int) pWert;
       }
-   public String getGt()
+   public String getgt()
     {
         return gt;
     }
-   public void setGt(String pGt){
-
+   public void setgt(String pgt){
+      gt = pgt;
     }
-   public String getKt() {
+   public String getkt() {
    return kt;
    }
-   public void setKt(String pGt){
-
+   public void setkt(String pkt){
+    kt = pkt;
    }
    public int getS(){
-return s;
+   return S;
    }
    public void setS(int pSchluessel){
 

@@ -1,10 +1,8 @@
-package src;
 
 import java.util.Scanner;
-
 public class Verwaltung {
     private Scanner scanner;
-    private Ceasar ceasar;
+    private ceasar ceasar;
 
     public static void main(String[] args) {
         new Verwaltung();
@@ -24,17 +22,17 @@ public class Verwaltung {
                 String schluesselString = scanner.nextLine();
                 int schluessel = Integer.parseInt(schluesselString);
                 ceasar= new Ceasar();
-                this.ceasar.setKt(zeichenkette);
+                this.ceasar.setkt(zeichenkette);
                 this.ceasar.setS(schluessel);
                 System.out.println("=======Klartext=======");
-                System.out.println(this.ceasar.getKt());
+                System.out.println(this.ceasar.getkt());
                 this.ceasar.verschluesseln();
                 System.out.println("=======Geheimtext=======");
-                System.out.println(this.ceasar.getGt());
+                System.out.println(this.ceasar.getgt());
 
             } else if (option == 2) {
                 this.ceasar.entschluesseln();
-                System.out.println(this.ceasar.getKt());
+                System.out.println(this.ceasar.getkt());
 
             }
             else if (option == 0) {
