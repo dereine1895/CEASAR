@@ -1,8 +1,8 @@
 
 import java.util.Scanner;
-public class Verwaltung {
+public class Verwaltung{
     private Scanner scanner;
-    private ceasar ceasar;
+    private Ceasar ceasar;
 
     public static void main(String[] args) {
         new Verwaltung();

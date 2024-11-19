@@ -1,5 +1,3 @@
-package src;
-
 public class Ceasar {
 
     private String gt;
@@ -7,11 +5,10 @@ public class Ceasar {
     private int S;
 
     public Ceasar() {
-
-    gt ="";
-    kt ="";
-    S = 0;
-
+        gt = "";
+        kt = "";
+        S = 0;
+    }
 
     public void verschluesseln() {
      for(int i =0; i < kt.length(); i++){
@@ -23,6 +20,7 @@ public class Ceasar {
         for(int i =0; i < gt.length(); i++){
             int h = this.getAscii(gt.charAt(i));
             kt= kt + this.getChar(h - S);
+        }
     }
 
    private char getChar(int pWert) {
@@ -31,15 +29,14 @@ public class Ceasar {
    private int getAscii(char pWert) {
         return (int) pWert;
       }
-   public String getgt()
-    {
+   public String getgt() {
         return gt;
     }
    public void setgt(String pgt){
       gt = pgt;
     }
    public String getkt() {
-   return kt;
+    return kt;
    }
    public void setkt(String pkt){
     kt = pkt;
