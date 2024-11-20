@@ -11,6 +11,9 @@ public class Verwaltung{
         scanner = new Scanner(System.in);
         while (true) {
             System.out.println("== HAUPTMENÜ ==");
+            System.out.println("[1]Ceasar");
+            System.out.println("[2]Vigenere");
+            int option = scanner.nextInt();
             System.out.println("[1] verschluesseln");
             System.out.println("[2] entschluesseln");
             int option = scanner.nextInt();
@@ -40,10 +43,10 @@ public class Verwaltung{
                 this.ceasar.setgt(zeichenkette);
                 this.ceasar.setS(schluessel);
                 System.out.println("=======Geheimtext=======");
-                System.out.println(this.ceasar.getkt());
+                System.out.println(zeichenkette);
                 this.ceasar.entschluesseln();
                 System.out.println("=======Klartext=======");
-                System.out.println(this.ceasar.getgt());
+                System.out.println(this.ceasar.getkt());
 
 
             }
