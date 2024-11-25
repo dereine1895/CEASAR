@@ -14,14 +14,16 @@ public class Vigenere {
 
         for(int i =0; i < kt.length(); i++){
              int h = this.buchstabenZuZahlen(kt.charAt(i));
-            gt= gt + this.zahlenZuBuchstaben(h);
+             int e = this.buchstabenZuZahlen(S.charAt(i));
+             gt= gt + this.zahlenZuBuchstaben(h + e);
         }
     }
     public void entschluesseln() {
 
         for(int i =0; i < gt.length(); i++){
-            int h = this.getASCII(gt.charAt(i));
-            kt= kt + this.getChar(h - S);
+            int h = this.buchstabenZuZahlen(gt.charAt(i));
+            int e = this.buchstabenZuZahlen(S.charAt(i));
+            kt= kt + this.zahlenZuBuchstaben(h - e);
         }
     }
 
@@ -44,11 +46,11 @@ public class Vigenere {
 
         kt = pWert;
     }
-    public int getS(){
+    public String getS(){
 
         return S;
     }
     public void setS(int pWert){
-        S = pWert;
+        S = String.valueOf(pWert);
     }
 }
