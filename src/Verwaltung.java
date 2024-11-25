@@ -11,7 +11,7 @@ public class Verwaltung {
 
     public Verwaltung() {
         scanner = new Scanner(System.in);
-        ceasar = new Ceasar();
+
         while (true) {
             System.out.println("== HAUPTMENÜ ==");
             System.out.println("[1]Ceasar");
@@ -19,39 +19,44 @@ public class Verwaltung {
             System.out.println("[3]Beenden");
             int option = scanner.nextInt();
              if (option == 1) {
-                System.out.println("[1] verschluesseln");
-                System.out.println("[2] entschluesseln");
-                option = scanner.nextInt();
-                // nextInt scannt keine neue Zeile. Ohne diese Anweisung würde das nächste gewollte nextLine nicht funktionieren.
-                if (option == 1) {
-                    System.out.println("Gib das zu verschlüsselnde Wort an:");
-                    String zeichenkette = scanner.nextLine();
-                    System.out.println("Gib den Schlüssel an:");
-                    String schluesselString = scanner.nextLine();
-                    int schluessel = Integer.parseInt(schluesselString);
-                    this.ceasar.setkt(zeichenkette);
-                    this.ceasar.setS(schluessel);
-                    System.out.println("=======Klartext=======");
-                    System.out.println(this.ceasar.getkt());
-                    this.ceasar.verschluesseln();
-                    System.out.println("=======Geheimtext=======");
-                    System.out.println(this.ceasar.getgt());
+                 System.out.println("[1] verschluesseln");
+                 System.out.println("[2] entschluesseln");
+                 option = scanner.nextInt();
+                 // nextInt scannt keine neue Zeile. Ohne diese Anweisung würde das nächste gewollte nextLine nicht funktionieren.
+                 if (option == 1) {
+                     System.out.println("Gib das zu verschlüsselnde Wort an:");
+                     String zeichenkette = scanner.nextLine();
+                     System.out.println("Gib den Schlüssel an:");
+                     String schluesselString = scanner.nextLine();
+                     int schluessel = Integer.parseInt(schluesselString);
+                     ceasar = new Ceasar();
+                     this.ceasar.setkt(zeichenkette);
+                     this.ceasar.setS(schluessel);
+                     System.out.println("=======Klartext=======");
+                     System.out.println(this.ceasar.getkt());
+                     this.ceasar.verschluesseln();
+                     System.out.println("=======Geheimtext=======");
+                     System.out.println(this.ceasar.getgt());
 
-                }
-                if (option == 2) {
-                    System.out.println("Gib das zu entschlüsselnde Wort an:");
-                    String zeichenkette = scanner.nextLine();
-                    System.out.println("Gib den Schlüssel an:");
-                    String schluesselString = scanner.nextLine();
-                    int schluessel = Integer.parseInt(schluesselString);
-                    this.ceasar.setgt(zeichenkette);
-                    this.ceasar.setS(schluessel);
-                    System.out.println("=======Geheimtext=======");
-                    System.out.println(zeichenkette);
-                    this.ceasar.entschluesseln();
-                    System.out.println("=======Klartext=======");
-                    System.out.println(this.ceasar.getkt());
-                } else if (option == 2) {
+                 }
+                 if (option == 2) {
+                     System.out.println("Gib das zu entschlüsselnde Wort an:");
+                     String zeichenkette = scanner.nextLine();
+                     System.out.println("Gib den Schlüssel an:");
+                     String schluesselString = scanner.nextLine();
+                     int schluessel = Integer.parseInt(schluesselString);
+                     ceasar = new Ceasar();
+                     this.ceasar.setgt(zeichenkette);
+                     this.ceasar.setS(schluessel);
+                     System.out.println("=======Geheimtext=======");
+                     System.out.println(zeichenkette);
+                     this.ceasar.entschluesseln();
+                     System.out.println("=======Klartext=======");
+                     System.out.println(this.ceasar.getkt());
+
+                 }
+             }
+             else if (option == 2) {
                     vigenere = new Vigenere();
                     String schluessel;
                     System.out.println("[1]verschlüsseln");
@@ -59,8 +64,8 @@ public class Verwaltung {
                     option = scanner.nextInt();
                     if (option == 1) {
                         System.out.println("Gib den zu verschlüsselnden Text an");
-                        String optionString = scanner.next();
-                        vigenere.setkt(optionString);
+                        String schluesselString = scanner.next();
+                        vigenere.setkt(schluesselString);
                         System.out.println("Gib den Schlüssel an");
                         schluessel = scanner.next();
                         vigenere.setS(Integer.parseInt(schluessel));
@@ -69,8 +74,8 @@ public class Verwaltung {
                     }
                     if (option == 2) {
                         System.out.println("Gib den zu entschlüsselnden Text an");
-                        String optionString = scanner.next();
-                        vigenere.setgt(optionString);
+                        String schluesselString = scanner.next();
+                        vigenere.setgt(schluesselString);
                         System.out.println("Gib den Schlüssel an");
                         schluessel = scanner.next();
                         vigenere.setS(Integer.parseInt(schluessel));
@@ -86,4 +91,3 @@ public class Verwaltung {
 
 
     }
-}
