@@ -1,7 +1,7 @@
 public class Vigenere {
-    private String gt;
-    private String kt;
-    private String S;
+    private String gt; //Geheimtext
+    private String kt; //Klartext
+    private String S; //Schlüssel
 
     public Vigenere() {
 
@@ -36,21 +36,21 @@ public class Vigenere {
     public String getgt() {
         return gt;
     }
-    public void setgt(String pWert){
-        gt = pWert;
+    public void setgt(String Geheimtext){
+        gt = Geheimtext;
     }
     public String getkt() {
         return kt;
     }
-    public void setkt(String pWert){
+    public void setkt(String Klartext){
 
-        kt = pWert;
+        kt = Klartext;
     }
     public String getS(){
 
         return S;
     }
-    public void setS(int pWert){
-        S = String.valueOf(pWert);
+    public void setS(String Schluessel){
+        S = Schluessel;
     }
 }
