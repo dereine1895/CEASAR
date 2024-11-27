@@ -1,56 +1,43 @@
-public class Vigenere {
-    private String gt; //Geheimtext
-    private String kt; //Klartext
-    private String S; //Schlüssel
+public class Vigenere extends Kryptomat {
+
+    private String s; //Schlüssel
 
     public Vigenere() {
 
         gt = "";
         kt = "";
-        S = "";
+        s = "";
     }
 
     public void verschluesseln() {
 
         for(int i =0; i < kt.length(); i++){
-             int h = this.buchstabenZuZahlen(kt.charAt(i));
-             int e = this.buchstabenZuZahlen(S.charAt(i));
-             gt= gt + this.zahlenZuBuchstaben(h + e);
+            kt = kt.toUpperCase();
+            s = s.toUpperCase();
+             int h = this.getAscii(kt.charAt(i));
+             int e =(s.charAt(i%s.length())-65)%26;
+             gt= gt + String.valueOf(this.getChar(((h + e -13)%26)+65));
+
         }
     }
     public void entschluesseln() {
 
         for(int i =0; i < gt.length(); i++){
-            int h = this.buchstabenZuZahlen(gt.charAt(i));
-            int e = this.buchstabenZuZahlen(S.charAt(i));
-            kt= kt + this.zahlenZuBuchstaben(h - e);
+            gt = gt.toUpperCase();
+            s = s.toUpperCase();
+            int h = this.getAscii(gt.charAt(i));
+            int e =(s.charAt(i%s.length())-65)%26;
+            gt=gt + String.valueOf(this.getChar(((h - e -13)%26)+65));
         }
     }
 
-    private char zahlenZuBuchstaben(int pWert) {
-        return (char) pWert;
-    }
-    private int buchstabenZuZahlen(char pWert) {
-        return (int) pWert;
-    }
-    public String getgt() {
-        return gt;
-    }
-    public void setgt(String Geheimtext){
-        gt = Geheimtext;
-    }
-    public String getkt() {
-        return kt;
-    }
-    public void setkt(String Klartext){
 
-        kt = Klartext;
-    }
+
     public String getS(){
 
-        return S;
+        return s;
     }
-    public void setS(String Schluessel){
-        S = Schluessel;
+    public void setS(String pSchluessel){
+        s = pSchluessel;
     }
 }

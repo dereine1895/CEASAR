@@ -1,21 +1,20 @@
-public class Ceasar {
+public class Ceasar extends Kryptomat {
 
-    private String gt;
-    private String kt;
-    private int S;
+
+    private int s;
 
     public Ceasar() {
 
         gt = "";
         kt = "";
-        S = 0;
+        s = 0;
     }
 
     public void verschluesseln() {
 
      for(int i =0; i < kt.length(); i++){
-         int h = this.getASCII(kt.charAt(i));
-         gt= gt + this.getChar(h + S);
+         int h = this.getAscii(kt.charAt(i));
+         gt= gt + this.getChar(h + s);
          //for schleife geht jede stelle des zu verschlüsselnden wortes durch.
          //legt den ascii wert des buchstaben in einen speicher h
          //fügt zum geheimwort den buchstaben aus ascii wert und schlüssel hinzu
@@ -24,8 +23,8 @@ public class Ceasar {
     public void entschluesseln() {
 
         for(int i =0; i < gt.length(); i++){
-            int h = this.getASCII(gt.charAt(i));
-            kt= kt + this.getChar(h - S);
+            int h = this.getAscii(gt.charAt(i));
+            kt= kt + this.getChar(h - s);
             /* geht jede stelle des wortes durch
             holt den ascii wert des aktuellen zeichens
             rechnet ascii wert von gt minus schlüssel
@@ -34,31 +33,13 @@ public class Ceasar {
         }
     }
 
-   private char getChar(int pWert) {
-        return (char) pWert;
-   }
-   private int getASCII(char pWert) {
-        return (int) pWert;
-      }
-   public String getgt() {
-        return gt;
-    }
-   public void setgt(String pWert){
-      gt = pWert;
-    }
-   public String getkt() {
-    return kt;
-   }
-   public void setkt(String pWert){
 
-        kt = pWert;
-   }
    public int getS(){
 
-        return S;
+        return s;
    }
-   public void setS(int pWert){
-     S = pWert;
+   public void setS(int pSchluessel){
+     s = pSchluessel;
    }
 }
 
