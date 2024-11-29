@@ -9,12 +9,15 @@ public class Vigenere extends Kryptomat {
         s = "";
     }
 
+    /**
+     *
+     */
     public void verschluesseln() {
 
         for(int i =0; i < kt.length(); i++){
-            kt = kt.toUpperCase();
-            s = s.toUpperCase();
-             int h = this.getAscii(kt.charAt(i));
+            kt = kt.toUpperCase(); //Wandelt den Klartext in Großbuchstaben um
+            s = s.toUpperCase();  //Wandelt den Schlüssel in Großbuchstaben um
+             int h = this.getAscii(kt.charAt(i)); //Holt den Ascii wert des Klartextes
              int e =(s.charAt(i%s.length())-65)%26;
              gt= gt + String.valueOf(this.getChar(((h + e -13)%26)+65));
 
@@ -23,9 +26,9 @@ public class Vigenere extends Kryptomat {
     public void entschluesseln() {
 
         for(int i =0; i < gt.length(); i++){
-            gt = gt.toUpperCase();
-            s = s.toUpperCase();
-            int h = this.getAscii(gt.charAt(i));
+            gt = gt.toUpperCase();  //Wandelt den Geheimtext in Großbuchstaben um
+            s = s.toUpperCase();  //Wandelt den Schlüssel in Großbuchstaben um
+            int h = this.getAscii(gt.charAt(i)); //Holt den Ascii wert des geheimtextes
             int e =(s.charAt(i%s.length())-65)%26;
             kt=kt + String.valueOf(this.getChar(((h - e -13)%26)+65));
         }
