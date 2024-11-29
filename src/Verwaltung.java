@@ -13,7 +13,8 @@ public class Verwaltung {
         scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Hallo, in diesem System kannst du eine beliebige Nachricht auf verschiedene Arten verschlüsseln oder entschlüssseln um eine Nachricht Geheim zu halten");
+            System.out.println("Hallo, in diesem System kannst du eine beliebige Nachricht auf verschiedene Arten verschlüsseln oder entschlüssseln um eine");
+            System.out.println("Nachricht Geheim zu halten.");
             System.out.println("== HAUPTMENÜ ==");
             System.out.println("Bei Ceasar wird eine Nachricht mithilfe einer Zahl,des schlüssels, Ver- oder entschlüsselt.");
             System.out.println("[1]Ceasar");
@@ -25,7 +26,8 @@ public class Verwaltung {
             scanner.nextLine();
               if (option == 1) {
                   ceasar = new Ceasar();
-                  System.out.println("Hier kannst du dir auswählen ob du etwas ver- oder entschlüsseln möchtest Für beides brauchst du die Nachricht die übermittelt werden soll und eine zahl 1mit dem die nachricht verschlüsselt wird.");
+                  System.out.println("Hier kannst du dir auswählen ob du etwas ver- oder entschlüsseln möchtest Für beides brauchst du die Nachricht die übermittelt");
+                  System.out.println("werden soll und eine zahl 1mit dem die nachricht verschlüsselt wird.");
                  System.out.println("[1] verschluesseln");
                  System.out.println("[2] entschluesseln");
                  option = scanner.nextInt();
@@ -66,7 +68,8 @@ public class Verwaltung {
              else if (option == 2) {
                   vigenere = new Vigenere();
                   String schluessel;
-                  System.out.println("Hier kannst du dir auswählen ob du etwas ver- oder entschlüsseln möchtest Für beides brauchst du die Nachricht die übermittelt werden soll und eine Nachricht mit dem die nachricht verschlüsselt wird.");
+                  System.out.println("Hier kannst du dir auswählen ob du etwas ver- oder entschlüsseln möchtest.");
+                  System.out.println("Für beides brauchst du die Nachricht die übermittelt werden soll und eine Nachricht mit dem die nachricht verschlüsselt wird.");
                   System.out.println("[1]verschlüsseln");
                   System.out.println("[2]entschlüsseln");
                   option = scanner.nextInt();
@@ -86,7 +89,7 @@ public class Verwaltung {
                       String schluesselString = scanner.next();
                       vigenere.setGt(schluesselString);
                       System.out.println("Gib das Schlüsselwort an");
-                      schluessel = scanner.nextLine();
+                      schluessel = scanner.next();
                       vigenere.setS(schluessel);
                       vigenere.entschluesseln();
                       System.out.println("Der Klartext lautet " + vigenere.getKt());

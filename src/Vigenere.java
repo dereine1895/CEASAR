@@ -27,7 +27,7 @@ public class Vigenere extends Kryptomat {
             s = s.toUpperCase();
             int h = this.getAscii(gt.charAt(i));
             int e =(s.charAt(i%s.length())-65)%26;
-            gt=gt + String.valueOf(this.getChar(((h - e -13)%26)+65));
+            kt=kt + String.valueOf(this.getChar(((h - e -13)%26)+65));
         }
     }
 
