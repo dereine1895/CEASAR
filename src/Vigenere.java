@@ -10,6 +10,7 @@ public class Vigenere extends Kryptomat {
     }
 
     /**
+     * Mit Hilfe dieser Methode wird ein Klartext nach dem Vigenereprinzip verschlüsselt. Verschlüsslet werden können nur
      *
      */
     public void verschluesseln() {
