@@ -5,7 +5,8 @@ public abstract class Kryptomat{
 
 
     public Kryptomat(){
-
+        gt = "";
+        kt = "";
     }
     public abstract void verschluesseln();
     public abstract void entschluesseln();

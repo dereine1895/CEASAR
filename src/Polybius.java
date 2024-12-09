@@ -4,19 +4,18 @@ public class Polybius extends Kryptomat{
 
 
     public Polybius() {
-       kt = "";
-       gt = "";
 
+       this.bfmS();
 
     }
 
-
+    @Override
     public void verschluesseln(){
-        this.bfmS();
 
         for(int i = 0; i< kt.length(); i++){
            for(int zeile = 1; zeile < alphabetQuadrat.length; zeile++){
                for(int spalte = 1; spalte < alphabetQuadrat.length; spalte++){
+                   kt = kt.toUpperCase();
                    if (kt.charAt(i) == alphabetQuadrat[zeile][spalte]) {
                        gt = gt + zeile + spalte;
                    }
@@ -25,8 +24,21 @@ public class Polybius extends Kryptomat{
        }
 
     }
+    @Override
     public void entschluesseln(){
-        this.bfmS();
+        kt="";
+        for(int i = 0; i< gt.length();i +=2){
+           int zeile =  gt.charAt(i);
+           int spalte =  gt.charAt(i + 1);
+           zeile--;
+           spalte--;
+
+           kt = kt + getChar(alphabetQuadrat[zeile][spalte]);
+
+
+
+        }
+
 
 
 
@@ -37,11 +49,12 @@ public class Polybius extends Kryptomat{
         int a = 65;
         for (int zeile = 1; zeile < alphabetQuadrat.length; zeile++){
             for(int spalte = 1; spalte < alphabetQuadrat.length; spalte++){
-                alphabetQuadrat[zeile][spalte] = a;
+
 
                 if (a==73){
                     a++;
                 }
+                alphabetQuadrat[zeile][spalte] = a;
                 a++;
             }
 

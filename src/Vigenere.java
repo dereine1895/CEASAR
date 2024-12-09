@@ -4,8 +4,7 @@ public class Vigenere extends Kryptomat {
 
     public Vigenere() {
 
-        gt = "";
-        kt = "";
+
         s = "";
     }
 

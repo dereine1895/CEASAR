@@ -5,8 +5,7 @@ public class Ceasar extends Kryptomat {
 
     public Ceasar() {
 
-        gt = "";
-        kt = "";
+
         s = 0;
     }
 

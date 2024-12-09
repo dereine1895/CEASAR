@@ -112,7 +112,7 @@ public class Verwaltung {
                       System.out.println("Dein verschlüsseltes Wort lautet:" + polybius.getGt());
                   }
                   if (option == 2){
-                      System.out.println("Gib das zu v");
+                      System.out.println("Gib die zu entschlüsselnden Zahlen an ");
                       String optionString = scanner.next();
                       polybius.setGt(optionString);
                       polybius.entschluesseln();
