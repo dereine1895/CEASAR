@@ -20,8 +20,10 @@ public class Verwaltung {
             System.out.println("[1]Ceasar");
             System.out.println("Bei Vigenere wird ein Wort mithilfe eines anderen Wortes verschlüsselt");
             System.out.println("[2]Vigenere");
+            System.out.println("Bei Polybius wird in Wort verschlüsselt und als Zahlen ausgegeben");
+            System.out.println("[3]Polybius");
             System.out.println("Wenn du willst kannst du das System auch beenden");
-            System.out.println("[3]Beenden");
+            System.out.println("[4]Beenden");
             int option = scanner.nextInt();
             scanner.nextLine();
               if (option == 1) {
@@ -94,9 +96,11 @@ public class Verwaltung {
                       vigenere.entschluesseln();
                       System.out.println("Der Klartext lautet " + vigenere.getKt());
                   }
-              }
-                 else if (option == 3) {
-                    break;
+             }else if (option == 3) {
+                  }
+
+             else if (option == 4) {
+                 break;
                 }
             }
 
