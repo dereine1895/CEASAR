@@ -5,6 +5,7 @@ public class Verwaltung {
     private Ceasar ceasar;
     private Vigenere vigenere;
     private Polybius polybius;
+    private Drehraster drehraster;
 
     public static void main(String[] args) {
         new Verwaltung();
@@ -23,8 +24,9 @@ public class Verwaltung {
             System.out.println("[2]Vigenere");
             System.out.println("Bei Polybius wird in Wort verschlüsselt und als Zahlen ausgegeben");
             System.out.println("[3]Polybius");
+            System.out.println("[4]Drehraster");
             System.out.println("Wenn du willst kannst du das System auch beenden");
-            System.out.println("[4]Beenden");
+            System.out.println("[5]Beenden");
             int option = scanner.nextInt();
             scanner.nextLine();
               if (option == 1) {
@@ -119,8 +121,29 @@ public class Verwaltung {
                       System.out.println("Dein entschlüsseltes Wort lautet:" + polybius.getGt());
                   }
                   }
+              else if (option == 4) {
+                  drehraster = new Drehraster();
+                  System.out.println("[1]verschlüsseln");
+                  option = scanner.nextInt();
+                  scanner.nextLine();
+                  if(option == 1){
+                      System.out.println("Gib das zu verschlüsselnde Wort an:");
+                      String zeichenkette = scanner.nextLine();
+                      this.ceasar.setKt(zeichenkette);
+                      System.out.println("Gib den Schlüssel als Zahl an:");
+                      String schluesselString = scanner.nextLine();
+                      int schluessel = Integer.parseInt(schluesselString);
+                      this.ceasar.setS(schluessel);
+                      System.out.println("=======Klartext=======");
+                      System.out.println(this.ceasar.getKt());
+                      this.ceasar.verschluesseln();
+                      System.out.println("=======Geheimtext=======");
+                      System.out.println(this.ceasar.getGt());
+                  }
 
-             else if (option == 4) {
+              }
+
+             else if (option == 5) {
                  break;
                 }
             }

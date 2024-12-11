@@ -42,11 +42,11 @@ public class Vigenere extends Kryptomat {
 
 
 
-    public String getS(){
+    public int getS(){
 
         return s;
     }
-    public void setS(String pSchluessel){
+    public void setS(int pSchluessel){
         s = pSchluessel;
     }
 }
