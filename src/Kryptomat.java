@@ -32,9 +32,4 @@ public abstract class Kryptomat{
     }
 
 
-
-
-
-
-
 }

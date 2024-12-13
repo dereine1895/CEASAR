@@ -84,8 +84,8 @@ public class Verwaltung {
                       String optionString = scanner.next();
                       vigenere.setKt(optionString);
                       System.out.println("Gib ein Schlüsselwort an");
-                      schluessel = scanner.next();
-                      vigenere.setS(schluessel);
+                      optionString = scanner.next();
+                      vigenere.setS(optionString);
                       vigenere.verschluesseln();
                       System.out.println("Dein verschluesseltes Wort lautet: " + vigenere.getGt());
                   }
@@ -94,8 +94,8 @@ public class Verwaltung {
                       String optionString = scanner.next();
                       vigenere.setGt(optionString);
                       System.out.println("Gib das Schlüsselwort an");
-                      schluessel = scanner.next();
-                      vigenere.setS(schluessel);
+                      optionString = scanner.next();
+                      vigenere.setS(optionString);
                       vigenere.entschluesseln();
                       System.out.println("Der entschlüsseltes Wort lautet: " + vigenere.getKt());
                   }
@@ -128,17 +128,13 @@ public class Verwaltung {
                   scanner.nextLine();
                   if(option == 1){
                       System.out.println("Gib das zu verschlüsselnde Wort an:");
-                      String zeichenkette = scanner.nextLine();
-                      this.ceasar.setKt(zeichenkette);
+                      String optionString = scanner.nextLine();
+                      drehraster.setKt(optionString);
                       System.out.println("Gib den Schlüssel als Zahl an:");
-                      String schluesselString = scanner.nextLine();
-                      int schluessel = Integer.parseInt(schluesselString);
-                      this.ceasar.setS(schluessel);
-                      System.out.println("=======Klartext=======");
-                      System.out.println(this.ceasar.getKt());
-                      this.ceasar.verschluesseln();
-                      System.out.println("=======Geheimtext=======");
-                      System.out.println(this.ceasar.getGt());
+                      option = scanner.nextInt();
+                      drehraster.setS(option);
+                      drehraster.verschluesseln();
+                      System.out.println("Das verschlüsselte Wort lautet:" + drehraster.getGt());
                   }
 
               }
